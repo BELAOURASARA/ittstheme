@@ -19,6 +19,9 @@ h1, h2 {
 h3, h4, p, li, a, label {
   font-family: Graphik; }
 
+p {
+  line-height: 1.5; }
+
 input, textarea, select {
   font-family: Graphik;
   border: none; }
@@ -89,8 +92,6 @@ header {
   overflow: hidden;
   position: fixed;
   z-index: 2;
-  /*border-bottom: solid 0.2px;
-    border-color: white;*/
   transition: 0.5s ease-in-out;
   display: grid;
   grid-template-columns: auto auto auto;
@@ -102,7 +103,7 @@ header {
     grid-column: 1/2; }
     header .logo img {
       height: 60px;
-      width: 150px; }
+      width: 146px; }
   header .search {
     border: solid;
     width: fit-content;
@@ -160,6 +161,12 @@ header {
   height: 80px;
   padding-top: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); }
+  .on-scroll .logo img {
+    display: none; }
+  .on-scroll .logo::before {
+    content: url(../assets/images/logo2.png);
+    height: 60px;
+    width: 150px; }
   .on-scroll .menu {
     color: #333333; }
   .on-scroll .navbar .nav-items .nav-link a {
@@ -188,7 +195,17 @@ header {
       grid-row: 1/2;
       justify-self: start; }
     header .search {
-      display: none; }
+      transition: unset;
+      position: absolute;
+      top: -10%;
+      right: 500%;
+      align-self: center;
+      visibility: hidden;
+      opacity: 0;
+      border: none;
+      border-bottom: solid;
+      border-radius: 0;
+      border-color: white; }
     header .menu {
       grid-column: 2/3;
       grid-row: 1/2;
@@ -235,13 +252,10 @@ header {
       align-self: center;
       cursor: pointer; }
     .search-mobile .search {
-      display: initial;
-      grid-column: 2/3;
-      grid-row: 1/2;
-      border: none;
-      border-bottom: solid;
-      border-radius: 0;
-      border-color: white; }
+      transition: all ease 0.5s;
+      opacity: 1;
+      visibility: visible;
+      top: 30%; }
   .on-scroll .close-search {
     color: #333333; }
   .on-scroll .search {
@@ -249,7 +263,7 @@ header {
 
 /*-------Index page --------------*/
 .main-container {
-  background-image: url("../assets/images/background.jpg");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/images/background.jpg");
   background-size: cover;
   height: 100vh;
   min-height: 500px;
@@ -259,7 +273,8 @@ header {
     text-align: center; }
     .main-container .main-content h1 {
       font-size: 4.5em;
-      font-weight: 700; }
+      font-weight: 700;
+      text-transform: uppercase; }
     .main-container .main-content p {
       width: 500px;
       margin: 10px auto 50px; }
@@ -282,6 +297,7 @@ header {
 .formations-container {
   height: 90vh;
   width: 100%;
+  max-height: 1000px;
   max-width: 1300px;
   margin: 0 auto; }
   .formations-container .title {
@@ -292,11 +308,12 @@ header {
     padding-bottom: 15px; }
   .formations-container .formations-slider .formation-content {
     height: 65vh;
+    max-height: 650px;
     text-align: center;
     width: 80%;
     box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.2);
     background-color: #f7f7f7;
-    margin: 0px 30px;
+    margin: 0px 25px;
     display: grid;
     grid-template-rows: 50% 50%; }
     .formations-container .formations-slider .formation-content img {
@@ -365,7 +382,7 @@ header {
 
 .articles-container .article-content {
   height: 100vh;
-  max-width: 1140px;
+  max-width: 1200px;
   max-height: 800px;
   margin: 0px auto 20px; }
   .articles-container .article-content .content {
@@ -472,37 +489,51 @@ header {
     transition: all ease 1s;
     margin-left: 10px; }
 
-.subscribe-container {
-  background-image: url("../assets/images/subscribe (2).jpeg");
-  background-repeat: no-repeat;
-  background-size: 110%;
-  color: white;
-  padding: 60px 0 60px 60px; }
-  .subscribe-container h1 {
-    font-size: 48px; }
-  .subscribe-container h3 {
-    font-size: 20px;
-    font-weight: 100;
-    margin: 30px 0; }
-  .subscribe-container input {
-    border: none;
-    padding: 10px 12px;
-    width: 250px;
-    font-size: 16px;
-    margin-right: 25px; }
-  .subscribe-container button {
-    border: none;
-    background-color: #0d4ea2;
-    font-size: 16px;
-    font-family: Open_sans;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding: 10px 30px;
-    cursor: pointer;
-    color: white; }
-    .subscribe-container button:hover {
-      background-color: #69a5f3;
-      color: black; }
+.clients-container {
+  padding: 0px 50px 0px 50px;
+  background-color: #f2f2f2; }
+  .clients-container .clients-slider {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px; }
+    .clients-container .clients-slider img {
+      max-height: 50%;
+      max-width: 30%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
+    .clients-container .clients-slider p {
+      font-size: 1rem;
+      color: #4d4d4d;
+      margin-left: 15%;
+      margin-right: 15%; }
+  .clients-container .owl-stage-outer {
+    padding-left: 15px; }
+  .clients-container .owl-nav {
+    margin: 0 !important;
+    background-color: transparent;
+    position: absolute;
+    top: 40%;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
+    .clients-container .owl-nav .owl-prev .owl-nav-prev-client {
+      color: #db545a;
+      background: none;
+      font-size: 40px; }
+    .clients-container .owl-nav .owl-next .owl-nav-next-client {
+      color: #db545a;
+      background: none;
+      font-size: 40px; }
+  .clients-container .owl-theme .owl-nav [class*='owl-'] {
+    margin: 0;
+    padding: 0; }
+    .clients-container .owl-theme .owl-nav [class*='owl-']:hover {
+      background-color: transparent;
+      color: #db545a; }
+    .clients-container .owl-theme .owl-nav [class*='owl-']:focus {
+      outline: none; }
 
 @media only screen and (min-width: 360px) and (max-width: 760px) {
   .main-container {
@@ -533,15 +564,7 @@ header {
         font-size: 30px;
         margin-top: 15px; }
       .articles-container .article-content .content button {
-        margin: 0 0 20px; }
-  .subscribe-container {
-    padding: 10px 10px; }
-    .subscribe-container h1 {
-      font-size: 30px; }
-    .subscribe-container h3 {
-      display: none; }
-    .subscribe-container input {
-      margin: 10px 0; } }
+        margin: 0 0 20px; } }
 
 /*-------Formations page---------*/
 .formation-main {
@@ -558,7 +581,7 @@ header {
 
 .formation-content {
   width: 90vw;
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 50px auto; }
   .formation-content .dropdown-categories {
     display: inline-block;
@@ -644,7 +667,7 @@ header {
 
 .lists-content {
   width: 90vw;
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 50px auto; }
   .lists-content .dropdown-thematics {
     display: inline-block;
@@ -756,6 +779,7 @@ header {
 .details-content {
   margin-left: 4rem;
   margin-right: 4rem;
+  margin-bottom: 20px;
   background-color: #f2f2f2;
   display: flex; }
   .details-content .details-left {
@@ -877,7 +901,7 @@ header {
 
 .planning-content {
   width: 90vw;
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 50px auto; }
   .planning-content .dropdown-planning {
     display: inline-block;
@@ -985,7 +1009,7 @@ header {
 
 .offers-container {
   width: 90vw;
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 50px auto; }
   .offers-container h1 {
     text-align: center;
@@ -1080,7 +1104,7 @@ header {
           .popup-form .form-content form .input-field input:focus, .popup-form .form-content form .input-field input:valid {
             border-color: #0d4ea2; }
           .popup-form .form-content form .input-field input:focus ~ label,
-          .popup-form .form-content form .input-field input:valid ~ label {
+          .popup-form .form-content form .input-field input:not([value=""]) ~ label {
             font-size: 14px;
             top: -24px;
             color: #0d4ea2; }
@@ -1124,13 +1148,17 @@ header {
     width: 100%;
     margin: auto 0; }
   .recrutement-form .form-content h1 {
-    font-size: 30px; }
-  .recrutement-form .form-content h2 {
-    text-align: center;
-    color: #0d4ea2;
-    margin: 15px 0 50px; }
+    font-size: 30px;
+    text-align: center; }
   .recrutement-form .form-content form {
-    padding: 0px 40px 10px 40px; }
+    box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.2);
+    padding: 0px 40px 10px 40px;
+    margin: 0 10px 10px; }
+    .recrutement-form .form-content form h2 {
+      text-align: center;
+      color: #0d4ea2;
+      margin: 15px 0 30px;
+      padding-top: 20px; }
     .recrutement-form .form-content form .input-field {
       position: relative;
       line-height: 65px; }
@@ -1156,16 +1184,17 @@ header {
         .recrutement-form .form-content form .input-field input:focus, .recrutement-form .form-content form .input-field input:valid {
           border-color: #0d4ea2; }
         .recrutement-form .form-content form .input-field input:focus ~ label,
-        .recrutement-form .form-content form .input-field input:valid ~ label {
+        .recrutement-form .form-content form .input-field input:not([value=""]) ~ label {
           font-size: 14px;
           top: -24px;
           color: #0d4ea2; }
     .recrutement-form .form-content form .textarea-field {
       position: relative;
-      line-height: 200px; }
+      padding-top: 20px;
+      line-height: 50px; }
       .recrutement-form .form-content form .textarea-field label {
         position: absolute;
-        top: -70px;
+        top: 10px;
         left: 0;
         width: 100%;
         height: 100%;
@@ -1179,18 +1208,16 @@ header {
         padding: 0.5rem 0;
         border-bottom: 2px solid #d3d3d3;
         box-shadow: none;
-        color: #111;
-        /* textarea:invalid {
-                    outline: 0;
-                    }*/ }
+        color: #111; }
         .recrutement-form .form-content form .textarea-field textarea:focus {
           border-color: #0d4ea2; }
-        .recrutement-form .form-content form .textarea-field textarea:focus ~ label {
+        .recrutement-form .form-content form .textarea-field textarea:focus ~ label, .recrutement-form .form-content form .textarea-field textarea:not([value=""]) ~ label {
           font-size: 14px;
-          top: -94px;
+          top: -15px;
           color: #0d4ea2; }
   .recrutement-form .form-content .button {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 10px; }
     .recrutement-form .form-content .button button {
       padding: 10px 25px;
       background-color: #0d4ea2;
@@ -1248,6 +1275,7 @@ header {
       justify-content: space-evenly;
       padding: 50px; }
       .about-main-container .main-content .link-boxes .link-box {
+        cursor: pointer;
         margin: 15px 30px 15px 30px;
         padding: 30px 0px 30px 0px;
         display: flex;
@@ -1255,12 +1283,8 @@ header {
         flex: 1;
         background-color: rgba(255, 255, 255, 0.6);
         color: #0d4ea2; }
-        .about-main-container .main-content .link-boxes .link-box a {
+        .about-main-container .main-content .link-boxes .link-box p {
           margin-top: 27px; }
-          .about-main-container .main-content .link-boxes .link-box a:visited {
-            color: #0d4ea2; }
-          .about-main-container .main-content .link-boxes .link-box a:active {
-            color: #0d4ea2; }
         .about-main-container .main-content .link-boxes .link-box i::before {
           font-size: 5rem;
           margin: 0px 0px 0px 0px; }
@@ -1380,52 +1404,6 @@ header {
         font-family: Montserrat_bold;
         font-weight: 700; }
 
-.clients-container {
-  padding: 0px 50px 0px 50px;
-  background-color: #f2f2f2; }
-  .clients-container .clients-slider {
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px; }
-    .clients-container .clients-slider img {
-      max-height: 50%;
-      max-width: 30%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto; }
-    .clients-container .clients-slider p {
-      font-size: 1rem;
-      color: #4d4d4d;
-      margin-left: 15%;
-      margin-right: 15%; }
-  .clients-container .owl-stage-outer {
-    padding-left: 15px; }
-  .clients-container .owl-nav {
-    margin: 0 !important;
-    background-color: transparent;
-    position: absolute;
-    top: 40%;
-    height: 80px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between; }
-    .clients-container .owl-nav .owl-prev .owl-nav-prev {
-      color: #db545a;
-      background: none;
-      font-size: 40px; }
-    .clients-container .owl-nav .owl-next .owl-nav-next {
-      color: #db545a;
-      background: none;
-      font-size: 40px; }
-  .clients-container .owl-theme .owl-nav [class*='owl-'] {
-    margin: 0;
-    padding: 0; }
-    .clients-container .owl-theme .owl-nav [class*='owl-']:hover {
-      background-color: transparent;
-      color: #db545a; }
-    .clients-container .owl-theme .owl-nav [class*='owl-']:focus {
-      outline: none; }
-
 .local-container {
   padding: 20px;
   text-align: center; }
@@ -1483,7 +1461,7 @@ header {
       padding: 10px; }
       .about-main-container .main-content .link-boxes .link-box i::before {
         font-size: 40px; }
-      .about-main-container .main-content .link-boxes .link-box a {
+      .about-main-container .main-content .link-boxes .link-box p {
         margin: 0 0 0 20px;
         align-self: center; }
   .about-description-container {
@@ -1555,7 +1533,7 @@ header {
 
 .contact-form {
   width: 90vw;
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 70px auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1617,6 +1595,15 @@ header {
     height: auto;
     grid-template-columns: auto;
     grid-template-rows: 1fr 1fr 1fr; }
+    .contact-info .contact-tool {
+      display: grid;
+      grid-template-columns: 30% 70%;
+      column-gap: 10px; }
+      .contact-info .contact-tool i {
+        padding-right: 0;
+        justify-self: center; }
+      .contact-info .contact-tool .text {
+        text-align: left; }
   .contact-form {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr; }
@@ -1723,6 +1710,14 @@ footer {
     padding-top: 20px; }
 
 @media only screen and (min-width: 360px) and (max-width: 760px) {
+  .subscribe-container {
+    padding: 10px 10px; }
+    .subscribe-container h1 {
+      font-size: 30px; }
+    .subscribe-container h3 {
+      display: none; }
+    .subscribe-container input {
+      margin: 10px 0; }
   footer {
     height: fit-content; }
     footer .footer-content {

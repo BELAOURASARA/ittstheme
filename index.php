@@ -18,7 +18,7 @@ get_header();
 <div class="main-container">
         <div class="main-content">
             <h1>Révélez vos </h1>
-            <h1>compétences IT !</h1>
+            <h1>compétences !</h1>
             <p class="main-text">
                 Lorem ipsum dolor sit amet . Recusandae quam impedit architecto. Nisi sed qui similique doloribus vel corrupti iure?
             </p>
@@ -32,50 +32,50 @@ get_header();
        <h1 class="title">Formations Garanties !</h1>  
        <div class=" owl-carousel owl-theme formations-slider " id="formations"> 
            <div class="formation-content">
-               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/CCNA.jpg">
+               <img src="assets/images/CCNA.jpg">
                <div class="formation-info">
                    <h3>CCNA</h3>
-                   <p>Lorem ipsum dolor sit amet.</p>
+                   <p>Lorem ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet.</p>
                    <button class="btn">S'INSCRIRE</button>
                </div>
            </div>
            <div class="formation-content">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/oracle.png">
+                <img src="assets/images/oracle.png">
                 <div class="formation-info">
                     <h3>Oracle</h3>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Lorem ipsum dolor sit amet ipsum dolor sit amet. </p>
                     <button class="btn">S'INSCRIRE</button>
                 </div>
             </div>
             <div class="formation-content">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cloud.png">
+                <img src="assets/images/cloud.png">
                 <div class="formation-info">
                     <h3>Cloud</h3>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Lorem ipsum dolor ipsum ipsum dolor dolor sit amet sit amet.</p>
                     <button class="btn">S'INSCRIRE</button>
                 </div>
             </div>
             <div class="formation-content">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/IBM.png">
+                <img src="assets/images/IBM.png">
                 <div class="formation-info">
                     <h3>IBM</h3>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Lorem ipsum dolor sit amet ipsum dolor sit amet.</p>
                     <button class="btn">S'INSCRIRE</button>
                 </div>
             </div>
             <div class="formation-content">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Redhat.png">
+                <img src="assets/images/Redhat.png">
                 <div class="formation-info">
                     <h3>RedHat</h3>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Lorem ipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet..</p>
                     <button class="btn">S'INSCRIRE</button>
                 </div>
             </div>
             <div class="formation-content">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Excel.png">
+                <img src="assets/images/Excel.png">
                 <div class="formation-info">
                     <h3>EXCEL</h3>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Lorem ipsum dolor sit amet ipsum dolor sit amet.</p>
                     <button class="btn">S'INSCRIRE</button>
                 </div>
             </div>
@@ -89,7 +89,7 @@ get_header();
     <div class="articles-container">
         <div  class="article-content article1">
             <div class="image">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/article1.jpg" >
+                <img src="assets/images/article1.jpg" >
             </div>
             <div id="article1" class="content">
                 <div class="text">
@@ -105,7 +105,7 @@ get_header();
         </div>
         <div class="article-content article2">
             <div class="image">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/article2.jpg">
+                <img src="assets/images/article2.jpg">
             </div>
             <div id="article2" class="content">
                 <div class="text">
@@ -121,7 +121,7 @@ get_header();
         </div>
         <div class="article-content article3">
             <div class="image">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/article3.jpg">
+                <img src="assets/images/article3.jpg">
             </div>
             <div id="article3" class="content">
                 <div class="text">
@@ -138,9 +138,35 @@ get_header();
         </div>
     </div>
 
+    <div class="clients-container" >   
+        <div class=" owl-carousel owl-theme clients-slider " id="clients"> 
+            <div>
+                <img src="assets/images/partner1.png">
+                <div>
+                    <p>rem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                </div>
+            </div>
+            <div>
+                <img src="assets/images/partner2.png">
+                <div>
+                    <p>rem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                </div>
+            </div>
+            <div>
+                <img src="assets/images/partner3.png">
+                <div>
+                    <p>rem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                
+                </div>
+            </div>
+        </div> 
+        <div class="owl-navigation-client">
+            <span class="owl-nav-prev-client"><i class="fas fa-chevron-left"></i></span>
+            <span class="owl-nav-next-client"><i class="fas fa-chevron-right"></i></span>
+        </div>
+    </div>     
     
 
-    
 
 	
 <?php

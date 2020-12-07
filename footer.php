@@ -41,13 +41,14 @@
 
 		<div class="footer-section pages">
 			<h3>Pages</h3>  
-			<ul class="pages-items">
+			<?php wp_nav_menu(array('menu'=>'footer')); ?>
+			<!--ul class="pages-items">
 				<li class="pages-link"><a href="formations.html">Formations</a></li>
 				<li class="pages-link"><a href="planning.html">Planning</a></li>
 				<li class="pages-link"><a href="recrutement.html">Recrutement</a></li>
 				<li class="pages-link"><a href="about.html">A propos</a></li>
 				<li class="pages-link"><a href="contact.html">Contact</a></li>
-			</ul>
+			</ul-->
 		</div>
 
 		<div class="footer-section ressources">

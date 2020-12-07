@@ -16,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Talents</title>
+    <title> <?php bloginfo('title')?> | <?php the_title(); ?> </title>
 
     <!-- CSS Style Sheet -->
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css">
@@ -26,7 +26,9 @@
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.theme.default.min.css">
     
 	<!-- Icons stylesheet-->
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/all.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/all.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/flaticon.css">
+
 	
 	<?php wp_head(); ?>
 
@@ -38,20 +40,14 @@
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png">
             </div>
 
-            <nav class="navbar">
-                <ul class="nav-items">
-                    <li class="nav-link"><a class="active" href="index.html">Accueil</a></li>
-                    <li class="nav-link"><a href="formations.html">Formations</a></li>
-                    <li class="nav-link"><a href="recrutement.html">Recrutement</a></li>
-                    <li class="nav-link"><a href="about.html">A propos</a></li>
-                    <li class="nav-link"><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <form class="search" action="#">
+         
+               <?php wp_nav_menu(array('menu'=>'Menu')); ?>
+                
+            <form class="search" method="get" action="<?php esc_url(home_url('/')); ?>">
                     <input type="text" placeholder="Search.." name="search">
                     <button  type="submit"><i  class="fas fa-search"></i></button>
             </form>
-            <div class="menu">
+            <div class="menu-mobile">
                 <i  class="fas fa-search search-btn"></i>
                 <i class="fas fa-bars menu-btn"></i>
             </div>

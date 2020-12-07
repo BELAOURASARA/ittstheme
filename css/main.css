@@ -117,7 +117,8 @@ header {
       font-family: Graphik;
       background-color: transparent;
       border: 0;
-      padding: 10px 0px 10px 20px; }
+      padding: 10px 0px 10px 20px;
+      color: white; }
       header .search input::placeholder {
         color: white; }
       header .search input:focus {
@@ -130,30 +131,30 @@ header {
       border: 0;
       background-color: transparent;
       color: white; }
-  header .navbar {
+  header .menu-menu-container {
     grid-column: 2/3;
-    margin: auto 0; }
-    header .navbar .nav-items {
+    margin: 40px 0 0 0; }
+    header .menu-menu-container ul{
       display: flex;
       justify-content: space-evenly; }
-      header .navbar .nav-items .nav-link {
+      header .menu-menu-container ul li {
         font-size: 17px;
         font-family: Graphik;
         text-transform: uppercase;
         letter-spacing: 1.5px; }
-        header .navbar .nav-items .nav-link a {
+        header .menu-menu-container ul li a {
           transition: all ease 0.3s;
           color: white; }
-          header .navbar .nav-items .nav-link a:hover {
+          header .menu-menu-container ul li a:hover {
             color: #f0f0f0;
             border-bottom: solid 2px;
             border-color: #f0f0f0;
             padding-bottom: 6px; }
-      header .navbar .nav-items .active {
+      header .menu-menu-container ul .current_page_item {
         border-bottom: solid 2px;
         border-color: white;
         padding-bottom: 6px; }
-  header .menu, header .close-search {
+  header .menu-mobile, header .close-search {
     display: none; }
 
 .on-scroll {
@@ -167,19 +168,21 @@ header {
     content: url(../assets/images/logo2.png);
     height: 60px;
     width: 150px; }
-  .on-scroll .menu {
+  .on-scroll .menu-mobile {
     color: #333333; }
-  .on-scroll .navbar .nav-items .nav-link a {
+  .on-scroll .menu-menu-container ul li a {
     color: #333333; }
-    .on-scroll .navbar .nav-items .nav-link a:hover {
+    .on-scroll .menu-menu-container ul li a:hover {
       color: #666666;
       border-color: #666666; }
-  .on-scroll .navbar .nav-items .active {
+  .on-scroll .menu-menu-container ul .current_page_item {
     border-color: #333333; }
   .on-scroll .search {
     border-color: #666666; }
     .on-scroll .search button {
       color: #666666; }
+    .on-scroll .search input{
+      color: #333333; }
     .on-scroll .search input::placeholder {
       color: #666666; }
     .on-scroll .search input:focus {
@@ -206,41 +209,41 @@ header {
       border-bottom: solid;
       border-radius: 0;
       border-color: white; }
-    header .menu {
+    header .menu-mobile {
       grid-column: 2/3;
       grid-row: 1/2;
       align-self: center;
       color: white;
       display: initial; }
-      header .menu .menu-btn {
+      header .menu-mobile .menu-btn {
         cursor: pointer;
         font-size: 30px; }
-      header .menu .search-btn {
+      header .menu-mobile .search-btn {
         cursor: pointer;
         font-size: 25px;
         margin-right: 20px; }
-    header .navbar {
+    header .menu-menu-container {
       grid-row: 2/3;
       grid-column: 1/-1;
       width: 100%;
       padding: 10px 50px; }
-      header .navbar .nav-items {
+      header .menu-menu-container ul  {
         padding-top: 20px;
         flex-direction: column; }
-        header .navbar .nav-items .nav-link {
+        header .menu-menu-container ul li {
           padding-bottom: 25px; }
-          header .navbar .nav-items .nav-link a {
+          header .menu-menu-container ul li a {
             color: #333333; }
-        header .navbar .nav-items .active {
+        header .menu-menu-container ul .current_page_item{
           border-color: #333333; }
   .collapse {
     height: 350px;
     background-color: white; }
-    .collapse .menu {
+    .collapse .menu-mobile {
       color: #333333; }
   .search-mobile {
     grid-template-columns: auto auto; }
-    .search-mobile .logo, .search-mobile .menu, .search-mobile .navbar {
+    .search-mobile .logo, .search-mobile .menu-mobile, .search-mobile .menu-menu-container {
       display: none; }
     .search-mobile .close-search {
       display: initial;
@@ -323,7 +326,7 @@ header {
     .formations-container .formations-slider .formation-content .formation-info {
       grid-row: 2/3;
       display: grid;
-      grid-template-rows: 20% 50% 30%;
+      grid-template-rows: 20% 30% 20% 30%;
       justify-items: center; }
       .formations-container .formations-slider .formation-content .formation-info h3 {
         font-family: Montserrat;
@@ -336,6 +339,13 @@ header {
         color: #555c66;
         margin: 7px 0 0;
         grid-row: 2/3; }
+      .formations-container .formations-slider .formation-content .formation-info .date {
+        grid-row: 3/4;
+        color: #555c66;
+        font-size: 18px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        }
       .formations-container .formations-slider .formation-content .formation-info .btn {
         background-color: #0d4ea2;
         border: none;
@@ -1028,7 +1038,7 @@ header {
       .offers-container .offers-list .offer-content .offer-title {
         color: #0d4ea2;
         margin-bottom: 20px; }
-      .offers-container .offers-list .offer-content .offer-description {
+      .offers-container .offers-list .offer-content p {
         border-top: solid 1px;
         border-color: black;
         padding: 10px 0; }
@@ -1667,8 +1677,9 @@ footer {
       font-family: Montserrat;
       font-weight: 700;
       margin: 0px 0px 50px; }
+    
     footer .footer-content li {
-      margin-top: 10px; }
+      margin-bottom: 10px; }
       footer .footer-content li a {
         color: #D9D9D9;
         font-size: 16px;

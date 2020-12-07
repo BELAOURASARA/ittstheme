@@ -19,7 +19,7 @@ $(document).ready(function(){
 
     /*------ Formations Slider -----*/
     $("#formations").owlCarousel({
-        loop:true,
+        loop:false,
         autoplay:true,
         autoplayTimeout:3000,
         dots:false,

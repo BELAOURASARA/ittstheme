@@ -178,3 +178,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function get_post_by_title($page_title, $output = OBJECT) {
+    
+    global $wpdb;
+    $post = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->posts WHERE post_title = %s AND post_type='post'", $page_title ), $output);
+    
+    if ( $post )
+        return $post;
+
+    return null;
+}

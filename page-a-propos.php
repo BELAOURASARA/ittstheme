@@ -297,9 +297,9 @@
               </div>
 
         </div>
-
+       
         
-        <button  type="submit" onclick="document.location='recrutement.html'">Rejoignez notre team !  <i class="fas fa-long-arrow-alt-right"></i> </button>
+        <button  type="submit" onclick="document.location='/ittswp/index.php/recrutement'">Rejoignez notre team !  <i class="fas fa-long-arrow-alt-right"></i> </button>
       
 
 
@@ -345,12 +345,12 @@
         $references = new WP_Query( $args );
         while($references->have_posts()) : 
             $references->the_post();
-            $img=get_the_post_thumbnail();
+            
             ?>
           <div>
-          <img src="<?php echo $img?>
+          <?php the_post_thumbnail();?>
           <div>
-          <p> <?php echo $content = get_the_content();?> </p>
+          <p> <?php  the_content();?> </p>
           </div>
           </div>
         

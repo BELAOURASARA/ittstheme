@@ -22,7 +22,7 @@ get_header();
         <div class="main-content">
              <?php the_content();?> 
              
-             <button onclick="document.location='http://127.0.0.1/ittswp/index.php/planning/'" class="btn" type="submit">Consulter le Planning   <i class="fas fa-long-arrow-alt-right"></i> </button>
+             <button onclick="document.location='/ittswp/index.php/planning'" class="btn" type="submit">Consulter le Planning   <i class="fas fa-long-arrow-alt-right"></i> </button>
             
         </div>
     </div>
@@ -83,12 +83,12 @@ get_header();
             ?>
         <div  class="article-content article<?php echo $i;?>">
             <div class="image">
-                <img src="<?php echo get_the_post_thumbnail();?>
+                <?php the_post_thumbnail();?>
             </div>
             <div id="article<?php echo $i;?>" class="content">
                 
-                    <h2 class="title"><?php echo $title = get_the_title();?></h2>
-                     <?php echo $content = get_the_content();?> 
+                    <h2 class="title"><?php the_title();?></h2>
+                     <?php the_content();?> 
                     <button > En savoir plus <i class="fas fa-long-arrow-alt-right"></i></button>
             </div>
 
@@ -111,12 +111,12 @@ get_header();
         $references = new WP_Query( $args );
         while($references->have_posts()) : 
             $references->the_post();
-            $img=get_the_post_thumbnail();
+ 
             ?>
           <div>
-          <img src="<?php echo $img?>
+          <?php the_post_thumbnail();?>
           <div>
-          <p> <?php echo $content = get_the_content();?> </p>
+          <p> <?php the_content();?> </p>
           </div>
           </div>
         

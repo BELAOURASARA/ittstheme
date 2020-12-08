@@ -430,8 +430,11 @@ header {
     grid-column: 2/4;
     grid-row: 1/6; }
     .articles-container .article1 .image img {
+      height: unset;  width: unset;
       height: 75vh;
       max-height: 500px; }
+
+     
   .articles-container .article1 .content {
     width: 35vw;
     max-width: 500px;
@@ -457,6 +460,7 @@ header {
     grid-column: 1/4;
     grid-row: 1/6; }
     .articles-container .article2 .image img {
+      height: unset;  width: unset;
       height: 90vh; }
   .articles-container .article2 .content {
     width: 30vw;
@@ -481,6 +485,7 @@ header {
     grid-column: 3/6;
     grid-row: 1/6; }
     .articles-container .article3 .image img {
+      height: unset;  width: unset;
       height: 90vh;
       z-index: 1; }
   .articles-container .article3 .content {

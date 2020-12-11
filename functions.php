@@ -122,10 +122,65 @@ add_action( 'after_setup_theme', 'ittstheme_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function ittstheme_widgets_init() {
+    register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer About', 'ittstheme' ),
+			'id'            => 'footer-1',
+			'description'   => esc_html__( 'Add widgets here.', 'ittstheme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'ittstheme' ),
-			'id'            => 'sidebar-1',
+			'name'          => esc_html__( 'Footer Pages', 'ittstheme' ),
+			'id'            => 'footer-2',
+			'description'   => esc_html__( 'Add widgets here.', 'ittstheme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Ressources', 'ittstheme' ),
+			'id'            => 'footer-3',
+			'description'   => esc_html__( 'Add widgets here.', 'ittstheme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Socials', 'ittstheme' ),
+			'id'            => 'footer-4',
+			'description'   => esc_html__( 'Add widgets here.', 'ittstheme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Social Media', 'ittstheme' ),
+			'id'            => 'socials-1',
+			'description'   => esc_html__( 'Add widgets here.', 'ittstheme' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Contact', 'ittstheme' ),
+			'id'            => 'contact-1',
 			'description'   => esc_html__( 'Add widgets here.', 'ittstheme' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -134,6 +189,7 @@ function ittstheme_widgets_init() {
 		)
 	);
 }
+
 add_action( 'widgets_init', 'ittstheme_widgets_init' );
 
 /**

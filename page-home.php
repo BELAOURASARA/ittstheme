@@ -32,16 +32,16 @@ get_header();
        <div class=" owl-carousel owl-theme formations-slider " id="formations">
            
             <?php
-            $params = array( 'limit' => -1 );
-            $pods = pods( 'formation', $params );
-            if ( $pods->total() > 0 ) {
-                while( $pods->fetch() )  {
+        $params = array( 'limit' => -1 , 'where'=>"confirmed_displayed.meta_value = '1'" );
+        $mypod = pods( 'formation', $params );
+            if ( $mypod->total() > 0 ) {
+                while( $mypod->fetch() )  {
 
                     //reset id
-                    $pods->id = $pods->id();
+                    $mypod->id = $mypod->id();
                     
                     //get the template
-                    $temp = $pods->template( 'formations template' );
+                    $temp = $mypod->template( 'formations template' );
                     //output template if it exists
                     if ( isset( $temp )  ) {
                         
@@ -49,9 +49,6 @@ get_header();
                     }
 
                 }
-                //pagination
-                echo $pods->pagination();
-
             }
             else {
                 echo 'No content found.'; }

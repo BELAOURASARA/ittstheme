@@ -40,8 +40,10 @@
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png">
             </div>
 
-         
+            
                <?php wp_nav_menu(array('menu'=>'Menu')); ?>
+
+              
                 
             <form class="search" method="get" action="<?php esc_url(home_url('/')); ?>">
                     <input type="text" placeholder="Search.." name="search">

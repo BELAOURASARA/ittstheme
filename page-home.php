@@ -86,7 +86,8 @@ get_header();
                 
                     <h2 class="title"><?php the_title();?></h2>
                      <?php the_content();?> 
-                    <button > En savoir plus <i class="fas fa-long-arrow-alt-right"></i></button>
+                     
+                    <button onclick="document.location='<?php the_permalink();?>'" > En savoir plus <i class="fas fa-long-arrow-alt-right"></i></button>
             </div>
 
          </div>    

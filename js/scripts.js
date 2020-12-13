@@ -1,11 +1,21 @@
 $(document).ready(function(){
     $header =$('header');
     $menuBtn= $('.menu-btn');
-
+    $itemHasChild= $('.menu-menu-container ul .menu-item-has-children');
 
     $menuBtn.click(function () {
         $header.toggleClass('collapse');
     })
+
+    $itemHasChild.hover(
+        function () {
+            $header.addClass("collapse");
+          },
+          function () {
+            $header.removeClass("collapse");
+          }
+    )
+    
 
     $searchBtn=$('.search-btn');
     $searchBtn.click(function(){
@@ -98,6 +108,16 @@ $(window).on("scroll", function() {
         $scrollArrow.style.display='block';
         var subscribeBtn = document.getElementById("subscribe-btn");
         if(subscribeBtn != null)  subscribeBtn.style.display='initial';
+        $itemHasChild.hover(
+            function () {
+                $header.removeClass('on-scroll');
+                $header.addClass("on-scroll-collapse");
+              },
+              function () {
+                $header.removeClass("on-scroll-collapse");
+                $('header').addClass('on-scroll');
+              }
+        )
     } else {
        $('header').removeClass('on-scroll');
        $scrollArrow.style.display='none';

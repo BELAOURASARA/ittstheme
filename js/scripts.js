@@ -9,10 +9,10 @@ $(document).ready(function(){
 
     $itemHasChild.hover(
         function () {
-            $header.addClass("collapse");
+            $header.addClass("collapse-sub");
           },
           function () {
-            $header.removeClass("collapse");
+            $header.removeClass("collapse-sub");
           }
     )
     
@@ -123,6 +123,16 @@ $(window).on("scroll", function() {
        $scrollArrow.style.display='none';
         var subscribeBtn = document.getElementById("subscribe-btn");
         if(subscribeBtn != null) subscribeBtn.style.display='none';
+        $itemHasChild.hover(
+            function () {
+                $header.removeClass('on-scroll');
+                $header.addClass("collapse-sub");
+              },
+              function () {
+                $header.removeClass("collapse-sub");
+                $('header').addClass('on-scroll');
+              }
+        )
     }
     
     //Articles animations

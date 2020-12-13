@@ -169,7 +169,7 @@ header {
           
       /* sub-menu */
       
-      .collapse {
+      .collapse-sub {
         height: fit-content;
         }
         .on-scroll-collapse {
@@ -183,40 +183,8 @@ header {
           transition: 0.5s ease-in-out;
           display: grid;
           grid-template-columns: auto auto auto;
-          background-color: rgba(0, 0, 0, 0.2); 
-/*
-          background-color: white;
-  
-          padding-top: 0;
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);*/ }
-        /*  .on-scroll-collapse .logo img {
-            display: none; }
-          .on-scroll-collapse .logo::before {
-            content: url(../assets/images/logo2.png);
-            height: 60px;
-            width: 150px; }
-          .on-scroll-collapse .menu-mobile {
-            color: #333333; }
-          .on-scroll-collapse .menu-menu-container ul li a {
-            color: #333333; }
-            .on-scroll-collapse .menu-menu-container ul li a:hover {
-              color: #666666;
-              border-color: #666666; }
-              .on-scroll-collapse .menu-menu-container .sub-menu a:hover {
-                color: #f0f0f0;
-                }  
-          .on-scroll-collapse .menu-menu-container ul .current_page_item {
-            border-color: #333333; }
-          .on-scroll-collapse .search {
-            border-color: #666666; }
-            .on-scroll-collapse .search button {
-              color: #666666; }
-            .on-scroll-collapse .search input{
-              color: #333333; }
-            .on-scroll-collapse .search input::placeholder {
-              color: #666666; }
-            .on-scroll-collapse .search input:focus {
-              color: #333333; } */
+          background-color: rgba(0, 0, 0, 0.2); }
+
          header  .menu-menu-container ul li .sub-menu
          {
              
@@ -280,8 +248,10 @@ header {
     content: url(../assets/images/logo2.png);
     height: 60px;
     width: 150px; }
+   
   .on-scroll .menu-mobile {
     color: #333333; }
+  
   .on-scroll .menu-menu-container ul li a {
     color: #333333; }
     .on-scroll .menu-menu-container ul li a:hover {
@@ -334,25 +304,55 @@ header {
         cursor: pointer;
         font-size: 25px;
         margin-right: 20px; }
+   
     header .menu-menu-container {
       grid-row: 2/3;
       grid-column: 1/-1;
       width: 100%;
       padding: 10px 50px; }
-      header .menu-menu-container ul  {
+      header .menu-menu-container .menu  {
         padding-top: 20px;
         flex-direction: column; }
-        header .menu-menu-container ul li {
-          padding-bottom: 25px; }
-          header .menu-menu-container ul li a {
+        header .menu-menu-container .menu li {
+          border-bottom: none;
+          padding-bottom: 6px; }
+          
+          header .menu-menu-container .menu li a {
             color: #333333; }
-        header .menu-menu-container ul .current_page_item{
-          border-color: #333333; }
+        header .menu-menu-container .menu .current_page_item{
+          border-bottom: none; }
+          
   .collapse {
-    height: 350px;
+    height: 450px;
     background-color: white; }
     .collapse .menu-mobile {
       color: #333333; }
+    .collapse .menu-menu-container .menu li{
+      padding-bottom: 15px;
+      border-bottom: none;
+    } 
+    .collapse .menu-menu-container .menu a:hover{
+      border-bottom: none;
+      font-weight:bold;
+      color:#333333;
+    } 
+    .collapse .menu-menu-container .menu .sub-menu a:hover{
+      border-bottom: none;
+      font-weight:initial;
+      color:#333333;
+    } 
+    .collapse .menu-menu-container .menu .current_page_item,.collapse .menu-menu-container .menu .sub-menu .current_page_item{
+      border-bottom: none;
+      border-color: unset;
+      font-weight: bold;
+    }  
+    .collapse .logo img{
+        display: none;
+      }
+   .collapse .logo::before {
+        content: url(../assets/images/logo2.png);
+        height: 60px;
+        width: 150px; }
   .search-mobile {
     grid-template-columns: auto auto; }
     .search-mobile .logo, .search-mobile .menu-mobile, .search-mobile .menu-menu-container {
